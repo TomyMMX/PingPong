@@ -2,23 +2,18 @@ function getPingPongString(){
   var outString = ''
   for(var i=1;i<=100;i++){
     var iStr=i+'';	
-    if(i%35===0||
-       (iStr.indexOf('7')!=-1&&iStr.indexOf('5')!=-1)||
-       (iStr.indexOf('7')!=-1&&i%5==0)||
-       (iStr.indexOf('5')!=-1&&i%7==0)){
-    	outString+='PINGPONG'      
+    var jump = 0;      
+    if(i%5===0 || iStr.indexOf('5')!=-1){
+      document.write('PING');
+      jump=1;
     }
-    else if(i%7===0||iStr.indexOf('7')!=-1){
-      outString+='PONG'
-    }
-    else if(i%5===0||iStr.indexOf('5')!=-1){
-      outString+='PING'
+    if(i%7===0 || iStr.indexOf('7')!=-1){
+      document.write('PONG')
+      jump=1;
     }	
-    else{
-      outString+= i
-    }
-    
-    outString+='<br />'
-  }
-  document.write(outString);
+    if(!jump){
+      document.write(i)
+    }    
+    document.write('<br />')
+  }  
 }
