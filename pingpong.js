@@ -5,7 +5,7 @@ function getPingPongString(){
     if(i%35===0||
        (iStr.indexOf('7')!=-1&&iStr.indexOf('5')!=-1)||
        (iStr.indexOf('7')!=-1&&i%5==0)||
-       (iStr.IndexOf('5')!=-1&&i%7==0)){
+       (iStr.indexOf('5')!=-1&&i%7==0)){
     	outString+='PINGPONG'      
     }
     else if(i%7===0||iStr.indexOf('7')!=-1){
